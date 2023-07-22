@@ -7,7 +7,8 @@ import { clearIndex, crawlDocument } from "./utils";
 import { Button } from "./Button";
 interface ContextProps {
   className: string;
-  selected: string[] | null;
+  /* selected: string[] | null; */
+  selected: ICard[] | [];
 }
 
 export const Context: React.FC<ContextProps> = ({ className, selected }) => {
@@ -19,11 +20,11 @@ export const Context: React.FC<ContextProps> = ({ className, selected }) => {
   const [overlap, setOverlap] = useState(1);
 
   // Scroll to selected card
-  useEffect(() => {
+  /* useEffect(() => {
     const element = selected && document.getElementById(selected[0]);
     element?.scrollIntoView({ behavior: "smooth" });
   }, [selected]);
-
+ */
   const DropdownLabel: React.FC<
     React.PropsWithChildren<{ htmlFor: string }>
   > = ({ htmlFor, children }) => (
@@ -54,9 +55,9 @@ export const Context: React.FC<ContextProps> = ({ className, selected }) => {
   ));
   return (
     <div
-      className={`flex flex-col space-y-4 overflow-y-scroll border-2 border-gray-500 w-full ${className}`}
+      className={`flex flex-col space-y-4 overflow-y-scroll w-full ${className}`}
     >
-      <div className="flex flex-col items-start sticky top-0 w-full">
+      {/* <div className="flex flex-col items-start sticky top-0 w-full">
         <div className="flex flex-col lg:flex-row w-full p-2">{buttons}</div>
         <div className="flex-grow w-full px-4">
           <Button
@@ -117,11 +118,11 @@ export const Context: React.FC<ContextProps> = ({ className, selected }) => {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
       <div className="flex flex-wrap w-full">
-        {cards &&
-          cards.map((card, key) => (
-            <Card key={key} card={card} selected={selected} />
+        {selected &&
+          selected.map((s, key) => (
+            <Card key={key} card={s} selected={/* selected */null} />
           ))}
       </div>
     </div>
