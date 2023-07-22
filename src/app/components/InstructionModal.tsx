@@ -24,8 +24,8 @@ const InstructionModal: React.FC<InstructionModalProps> = ({
         <h2 className="text-2xl font-bold mb-4">Instructions</h2>
         <p>
           Blueprint AI is a side project developed purely for entertainment and
-          education. It's a user-friendly digital tool designed to provide
-          instant, accessible information about Bryan Johnson's Blueprint
+          education. It&apos;s a user-friendly digital tool designed to provide
+          instant, accessible information about Bryan Johnson&apos;s Blueprint
           Protocol. With a simple and intuitive interface, the chatbot allows
           users to delve into the details of the Protocol, exploring its
           concepts, principles, and applications in a fun and engaging way.
