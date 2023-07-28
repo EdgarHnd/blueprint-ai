@@ -19,7 +19,7 @@ const Chat: React.FC<Chat> = ({
   messages,
 }) => {
   return (
-    <div id="chat" className="flex flex-col w-full lg:w-3/5 mr-4 mx-5 lg:mx-0">
+    <div id="chat" className="flex flex-col w-full lg:w-3/5 mr-4 mx-5 lg:mx-0 mb-6">
       <Messages messages={messages} />
       <>
         <form
@@ -34,9 +34,9 @@ const Chat: React.FC<Chat> = ({
             onChange={handleInputChange}
           />
 
-          <span className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-gray-400">
+          <button type="submit" className="cursor-pointer z-20 absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
            <AiOutlineSend />
-          </span>
+          </button>
         </form>
       </>
     </div>
